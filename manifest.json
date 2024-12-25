@@ -1,0 +1,23 @@
+{
+  "manifest_version": 3,
+  "name": "BhagavadGita Quotes",
+  "version": "1.0",
+  "description": "A widget to display BhagavadGita quotes on any webpage.",
+  "permissions": ["activeTab", "scripting"],
+  "host_permissions": ["<all_urls>"],
+  "action": {
+    "default_popup": "popup.html"
+  },
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["src/content.js"]
+    }
+  ],
+  "web_accessible_resources": [
+    {
+      "resources": ["src/Gita.json"],
+      "matches": ["<all_urls>"]
+    }
+  ]
+}
